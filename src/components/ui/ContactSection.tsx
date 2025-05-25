@@ -38,9 +38,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-deep-black relative">
+    <section id="contact" className="py-20 bg-deep-black relative overflow-hidden">
       {/* Neural network background */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="neuralGrid" width="50" height="50" patternUnits="userSpaceOnUse">
@@ -121,7 +121,7 @@ export default function ContactSection() {
                     href="https://www.linkedin.com/in/sathvik-vk-b76090269/" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-cyber-blue transition-colors"
+                    className="text-gray-300 hover:text-cyber-blue transition-colors break-words"
                   >
                     linkedin.com/in/sathvik-vk-b76090269
                   </a>

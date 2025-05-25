@@ -13,7 +13,7 @@ export default function ProjectsSection() {
     {
       title: 'AI Voice Journal & Goal Tracker',
       description: 'Developed a modular voice agent pipeline using Whisper for speech recognition, Gemini LLM for NLP, and gTTS for text-to-speech output.',
-      technologies: ['Python', 'Whisper', 'Gemini API', 'MongoDB', 'gTTS', 'Agno'],
+      technologies: ['Python', 'Whisper', 'Gemini API'],
       category: 'ai',
       thumbnail: '/images/projects/voice-journal.jpg',
       link: 'https://github.com/sathvik-23/hope',
@@ -23,7 +23,7 @@ export default function ProjectsSection() {
     {
       title: 'AI-Powered Video Editor',
       description: 'Created a conversational interface that lets users edit and rearrange video clips using natural language commands, integrating LLMs with MoviePy.',
-      technologies: ['Python', 'MoviePy', 'LangChain', 'LLMs'],
+      technologies: ['Python', 'MoviePy', 'LangChain'],
       category: 'ai',
       thumbnail: '/images/projects/video-editor.jpg',
       link: 'https://github.com/sathvik-23/ai-video-editor',
@@ -33,7 +33,7 @@ export default function ProjectsSection() {
     {
       title: 'ATLIQ Store Assistant',
       description: 'Built a chatbot that converts natural language to SQL using LangChain + PALM, enabling instant query responses and reducing user search effort by 40%.',
-      technologies: ['LangChain', 'Hugging Face', 'MySQL', 'Chroma'],
+      technologies: ['LangChain', 'Hugging Face', 'MySQL'],
       category: 'llm',
       thumbnail: '/images/projects/store-assistant.jpg',
       link: 'https://github.com/sathvik-23',
@@ -53,7 +53,7 @@ export default function ProjectsSection() {
     {
       title: 'Xencapture',
       description: 'Built a React Native app enabling real-time 3D model capture and visualization, boosting accuracy by 30% and reducing latency by 25%.',
-      technologies: ['React Native', 'Firebase', 'Redux Toolkit', 'React Three Fiber'],
+      technologies: ['React Native', 'Firebase', 'Redux Toolkit'],
       category: 'web',
       thumbnail: '/images/projects/xencapture.jpg',
       link: 'https://github.com/sathvik-23',
@@ -63,7 +63,7 @@ export default function ProjectsSection() {
     {
       title: 'Agent with Tools',
       description: 'Developed an advanced AI agent framework leveraging Agno to integrate various tools like web search, calculator, and Python interpreter for solving complex tasks autonomously.',
-      technologies: ['Python', 'Agno', 'LLMs', 'Tool Integration'],
+      technologies: ['Python', 'Agno', 'LLMs'],
       category: 'ai',
       thumbnail: '/images/projects/agent-tools.jpg',
       link: 'https://github.com/sathvik-23/Agent-with-tools',
@@ -76,11 +76,10 @@ export default function ProjectsSection() {
     {
       title: 'Agents with Knowledge',
       description: 'Created a sophisticated RAG-based agent system using Agno that can process and reason over multiple knowledge sources, enabling contextual understanding and high-quality responses.',
-      technologies: ['Python', 'Agno', 'RAG', 'Vector DB'],
+      technologies: ['Python', 'Agno', 'RAG'],
       category: 'ai',
       link: 'https://github.com/sathvik-23/Agents-with-knowledge',
-      github: 'https://github.com/sathvik-23/Agents-with-knowledge',
-      featured: false
+      github: 'https://github.com/sathvik-23/Agents-with-knowledge'
     },
     {
       title: 'Basic Agent',
@@ -88,26 +87,23 @@ export default function ProjectsSection() {
       technologies: ['Python', 'Agno', 'LLM'],
       category: 'ai',
       link: 'https://github.com/sathvik-23/Basic-agent',
-      github: 'https://github.com/sathvik-23/Basic-agent',
-      featured: false
+      github: 'https://github.com/sathvik-23/Basic-agent'
     },
     {
       title: 'Market Analysis Agent',
       description: 'Built an AI-powered agent that analyzes market trends and financial data to provide insights and recommendations, using Agno for orchestration and API integrations.',
-      technologies: ['Python', 'Agno', 'Financial APIs', 'Data Analysis'],
+      technologies: ['Python', 'Agno', 'Financial APIs'],
       category: 'ai',
       link: 'https://github.com/sathvik-23/market-analysis-agent',
-      github: 'https://github.com/sathvik-23/market-analysis-agent',
-      featured: false
+      github: 'https://github.com/sathvik-23/market-analysis-agent'
     },
     {
       title: 'Pet Listing Platform',
       description: 'Developed a full-stack web application for pet adoption featuring user authentication, pet listings with search/filter capabilities, and a responsive UI.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+      technologies: ['React', 'Node.js', 'MongoDB'],
       category: 'web',
       link: 'https://github.com/sathvik-23/PetListing',
-      github: 'https://github.com/sathvik-23/PetListing',
-      featured: false
+      github: 'https://github.com/sathvik-23/PetListing'
     },
     {
       title: 'Tax Calculator',
@@ -115,26 +111,23 @@ export default function ProjectsSection() {
       technologies: ['JavaScript', 'HTML/CSS', 'Tax Algorithms'],
       category: 'web',
       link: 'https://github.com/sathvik-23/Tax-Calculator.hithub.io',
-      github: 'https://github.com/sathvik-23/Tax-Calculator.hithub.io',
-      featured: false
+      github: 'https://github.com/sathvik-23/Tax-Calculator.hithub.io'
     },
     {
       title: 'Music Records Web Scraper',
       description: 'Built an automated web scraping tool to collect and analyze music record data from multiple sources, with data cleaning and structured output capabilities.',
-      technologies: ['Python', 'BeautifulSoup', 'Pandas', 'Data Visualization'],
+      technologies: ['Python', 'BeautifulSoup', 'Pandas'],
       category: 'data',
       link: 'https://github.com/sathvik-23/web-scraping_music_records',
-      github: 'https://github.com/sathvik-23/web-scraping_music_records',
-      featured: false
+      github: 'https://github.com/sathvik-23/web-scraping_music_records'
     },
     {
       title: 'AI SaaS Platform',
       description: 'Developed a Software-as-a-Service platform that provides AI capabilities including image generation, text completion, and code assistance with subscription-based pricing tiers.',
-      technologies: ['Next.js', 'OpenAI API', 'Stripe', 'Prisma'],
+      technologies: ['Next.js', 'OpenAI API', 'Stripe'],
       category: 'ai',
       link: 'https://github.com/sathvik-23/aisaas',
-      github: 'https://github.com/sathvik-23/aisaas',
-      featured: false
+      github: 'https://github.com/sathvik-23/aisaas'
     },
     {
       title: 'Simple Todo App',
@@ -142,25 +135,23 @@ export default function ProjectsSection() {
       technologies: ['React', 'Context API', 'LocalStorage'],
       category: 'web',
       link: 'https://github.com/sathvik-23/simple-Todo-app',
-      github: 'https://github.com/sathvik-23/simple-Todo-app',
-      featured: false
+      github: 'https://github.com/sathvik-23/simple-Todo-app'
     },
     {
       title: 'YouTube RAG System',
       description: 'Built a Retrieval-Augmented Generation system that indexes YouTube video transcripts and enables natural language querying across video content with accurate, source-attributed responses.',
-      technologies: ['Python', 'LangChain', 'YouTube API', 'Vector Database'],
+      technologies: ['Python', 'LangChain', 'YouTube API'],
       category: 'ai',
       link: 'https://github.com/sathvik-23/youtube-rag',
-      github: 'https://github.com/sathvik-23/youtube-rag',
-      featured: false
+      github: 'https://github.com/sathvik-23/youtube-rag'
     }
   ];
   
-  // Combine projects based on display mode
-  const allProjects = [...featuredProjects, ...additionalProjects];
-  const displayProjects = showAll ? allProjects : featuredProjects;
+  // Filter projects based on selected category and view state
+  const displayProjects = showAll ? 
+    [...featuredProjects, ...additionalProjects] : 
+    featuredProjects;
   
-  // Filter projects based on selected category
   const filteredProjects = selectedCategory === 'all' 
     ? displayProjects 
     : displayProjects.filter(project => project.category === selectedCategory);
@@ -181,7 +172,7 @@ export default function ProjectsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="section-heading">Featured Projects</h2>
+          <h2 className="section-heading">{showAll ? 'All Projects' : 'Featured Projects'}</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
             Explore my latest work combining AI, machine learning, and full-stack development
             to create innovative solutions.
@@ -221,8 +212,8 @@ export default function ProjectsSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="glassmorphism overflow-hidden group"
+              transition={{ duration: 0.5, delay: 0.1 * (index % 6) }} // Limit delay calculation
+              className="glassmorphism overflow-hidden group h-full"
             >
               <div className="h-48 bg-gradient-to-br from-dark-purple to-space-gray overflow-hidden">
                 <div className="w-full h-full flex items-center justify-center">
@@ -242,12 +233,12 @@ export default function ProjectsSection() {
                 </div>
               </div>
               
-              <div className="p-6">
+              <div className="p-6 flex flex-col justify-between flex-grow">
                 <p className="text-gray-300 text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>
                 
-                <div className="flex justify-end space-x-3">
+                <div className="flex justify-end space-x-3 mt-auto">
                   {project.github && (
                     <a 
                       href={project.github}
@@ -275,18 +266,29 @@ export default function ProjectsSection() {
           ))}
         </div>
         
-        {/* View More/Less Button */}
-        <div className="mt-12 text-center">
-          <motion.button
-            onClick={() => setShowAll(!showAll)}
-            className="cyber-button inline-flex items-center"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+        {/* Toggle Button */}
+        <motion.div
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <a 
+            href={showAll ? "#projects" : "#all-projects"}
+            onClick={(e) => {
+              e.preventDefault();
+              setShowAll(!showAll);
+              setSelectedCategory('all');
+              // Scroll to projects section when toggling
+              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="cyber-button inline-flex items-center cursor-pointer"
           >
-            {showAll ? 'Show Featured Projects' : 'View All Projects'} 
+            {showAll ? 'Show Featured Projects' : 'View All Projects'}
             <FiChevronRight className="ml-2" />
-          </motion.button>
-        </div>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
