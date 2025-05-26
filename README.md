@@ -2,6 +2,9 @@
 
 A modern, futuristic AI-themed portfolio website showcasing Sathvik's skills, projects, and experience as an AI/ML engineer.
 
+![Uploading Screenshot 2025-05-26 at 12.45.12 PM.png…]()
+
+
 ## Features
 
 - **Interactive 3D Elements** (in Hero section)
