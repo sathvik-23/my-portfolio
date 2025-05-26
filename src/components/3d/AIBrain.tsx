@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { MathUtils } from 'three';
+import * as THREE from 'three';
 import { useSpring, animated } from '@react-spring/three';
 
 type AIBrainProps = {
@@ -21,75 +21,32 @@ export default function AIBrain({
   pulseColor = '#10b981'
 }: AIBrainProps) {
   const brainRef = useRef<THREE.Group>(null);
-  const neuronRefs = useRef<THREE.Mesh[]>([]);
-  const synapseRefs = useRef<THREE.Line[]>([]);
   const [hovered, setHovered] = useState(false);
   const [active, setActive] = useState(false);
   
-  // Create neurons and synapses
-  const neuronCount = 20;
-  const neurons = Array.from({ length: neuronCount }, (_, i) => ({
+  // Create simplified neurons
+  const neuronCount = 8; // Reduced count for better performance
+  const neurons = Array.from({ length: neuronCount }, () => ({
     position: [
       Math.random() * 2 - 1,
       Math.random() * 2 - 1,
       Math.random() * 2 - 1
-    ]
+    ] as [number, number, number],
+    scale: 1
   }));
   
-  // Create connections between neurons
-  const synapses = [];
-  for (let i = 0; i < neuronCount; i++) {
-    for (let j = i + 1; j < neuronCount; j++) {
-      if (Math.random() > 0.7) { // 30% chance of connection
-        synapses.push({ from: i, to: j });
-      }
-    }
-  }
-
-  // Spring animation for hover effect
+  // Spring animation for hover effect - simplified for Safari
   const { scaleSpring } = useSpring({
     scaleSpring: (isHovered || hovered) ? 1.2 : 1,
-    config: { tension: 300, friction: 10 }
+    config: { tension: 200, friction: 15 } // Adjusted for better Safari performance
   });
   
-  // Rotate the brain slowly
-  useFrame((state, delta) => {
+  // Simplified rotation for better performance
+  useFrame((state) => {
     if (brainRef.current) {
-      brainRef.current.rotation.y += delta * 0.1;
-      brainRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.2) * 0.1;
-      
-      // Pulse the neurons
-      neuronRefs.current.forEach((neuron, i) => {
-        if (neuron) {
-          const time = state.clock.elapsedTime + i;
-          const scale = 0.8 + Math.sin(time * 2) * 0.2;
-          neuron.scale.set(scale, scale, scale);
-          
-          // Change color when active
-          if (neuron.material) {
-            const material = neuron.material as THREE.MeshStandardMaterial;
-            if (active || isHovered || hovered) {
-              material.emissive.set(pulseColor);
-              material.emissiveIntensity = 0.5 + Math.sin(time * 3) * 0.5;
-            } else {
-              material.emissiveIntensity = 0.2 + Math.sin(time * 3) * 0.2;
-            }
-          }
-        }
-      });
-      
-      // Animate synapses
-      synapseRefs.current.forEach((synapse, i) => {
-        if (synapse && synapse.material) {
-          const material = synapse.material as THREE.LineBasicMaterial;
-          const time = state.clock.elapsedTime + i;
-          if (active || isHovered || hovered) {
-            material.opacity = 0.3 + Math.sin(time * 2) * 0.7;
-          } else {
-            material.opacity = 0.1 + Math.sin(time * 2) * 0.2;
-          }
-        }
-      });
+      // Simplified rotation logic
+      brainRef.current.rotation.y += 0.005;
+      brainRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.1) * 0.05;
     }
   });
 
@@ -97,19 +54,18 @@ export default function AIBrain({
     <animated.group 
       ref={brainRef} 
       position={position} 
-      scale={scaleSpring.to(s => [s * scale, s * scale, s * scale])}
+      scale={scaleSpring.to(s => [s * scale, s * scale, s * scale]) as any}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
       onClick={() => setActive(!active)}
     >
-      {/* Neurons */}
+      {/* Simplified neurons for better Safari compatibility */}
       {neurons.map((neuron, i) => (
         <mesh 
           key={`neuron-${i}`}
-          position={neuron.position as [number, number, number]}
-          ref={(el: THREE.Mesh) => { neuronRefs.current[i] = el; }}
+          position={neuron.position}
         >
-          <sphereGeometry args={[0.05, 16, 16]} />
+          <sphereGeometry args={[0.05, 8, 8]} /> {/* Lower poly count */}
           <meshStandardMaterial 
             color={color} 
             emissive={color}
@@ -120,34 +76,19 @@ export default function AIBrain({
         </mesh>
       ))}
       
-      {/* Synapses (connections) */}
-      {synapses.map((synapse, i) => {
-        const start = neurons[synapse.from].position as [number, number, number];
-        const end = neurons[synapse.to].position as [number, number, number];
-        
-        return (
-          <line
-            key={`synapse-${i}`}
-            ref={(el: THREE.Line) => { synapseRefs.current[i] = el; }}
-          >
-            <bufferGeometry attach="geometry">
-              <bufferAttribute
-                attach="attributes-position"
-                array={new Float32Array([...start, ...end])}
-                count={2}
-                itemSize={3}
-              />
-            </bufferGeometry>
-            <lineBasicMaterial 
-              attach="material" 
-              color={color} 
-              transparent 
-              opacity={0.3} 
-              linewidth={1}
-            />
-          </line>
-        );
-      })}
+      {/* Central brain sphere */}
+      <mesh>
+        <sphereGeometry args={[0.2, 16, 16]} />
+        <meshStandardMaterial 
+          color={active || hovered ? pulseColor : color} 
+          emissive={active || hovered ? pulseColor : color}
+          emissiveIntensity={0.7}
+          roughness={0.1}
+          metalness={0.9}
+          transparent
+          opacity={0.7}
+        />
+      </mesh>
     </animated.group>
   );
 }

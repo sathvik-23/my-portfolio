@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/sathvik/Desktop/sathvik-portfolio/src/app/layout\":[\"static/media/a34f9d1faa5f3315-s.p.woff2\",\"static/media/739c2d8941231bb4-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/sathvik/Desktop/sathvik-portfolio/src/app/layout":["static/media/a34f9d1faa5f3315-s.p.woff2","static/media/739c2d8941231bb4-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';

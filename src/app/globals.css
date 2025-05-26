@@ -103,3 +103,4 @@ body {
     transform: rotate(360deg);
   }
 }
+@import './safari-fixes.css';

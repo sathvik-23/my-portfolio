@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import HeroScene from '../3d/HeroScene';
 import { FiArrowDown, FiCode, FiDatabase, FiCpu } from 'react-icons/fi';
@@ -12,11 +12,26 @@ const TypeAnimation = dynamic(
   { ssr: false }
 );
 
+// Safari detection
+const isSafari = () => {
+  if (typeof window === 'undefined') return false;
+  
+  const ua = window.navigator.userAgent;
+  return (
+    ua.includes('Safari') && 
+    !ua.includes('Chrome') && 
+    !ua.includes('Firefox') && 
+    !ua.includes('Edge')
+  );
+};
+
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false);
+  const [isSafariBrowser, setIsSafariBrowser] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    setIsSafariBrowser(isSafari());
   }, []);
 
   return (
@@ -54,14 +69,14 @@ export default function HeroSection() {
             SATHVIK VK
           </motion.h1>
           
-          {/* Dynamic title */}
+          {/* Dynamic title - use TypeAnimation for Chrome, static text for Safari */}
           <motion.div 
             className="text-xl md:text-2xl mb-6 text-gray-300 h-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            {mounted && TypeAnimation ? (
+            {mounted && TypeAnimation && !isSafariBrowser ? (
               <TypeAnimation
                 sequence={[
                   'AI Software Engineer',
@@ -94,7 +109,7 @@ export default function HeroSection() {
             with expertise in LLMs, RAG, and multimodal AI agents.
           </motion.p>
           
-          {/* Skill badges */}
+          {/* Skill badges - retain animations for Chrome, simpler for Safari */}
           <motion.div 
             className="flex flex-wrap gap-3 mb-8 justify-center lg:justify-start"
             initial={{ opacity: 0 }}
@@ -103,7 +118,7 @@ export default function HeroSection() {
           >
             <motion.div 
               className="flex items-center bg-dark-purple/50 border border-light-purple/30 px-4 py-2 rounded-full"
-              whileHover={{ scale: 1.05, backgroundColor: 'rgba(99, 102, 241, 0.2)' }}
+              whileHover={isSafariBrowser ? undefined : { scale: 1.05, backgroundColor: 'rgba(99, 102, 241, 0.2)' }}
             >
               <FiCpu className="mr-2 text-cyber-blue" />
               <span className="text-sm">AI/ML</span>
@@ -111,7 +126,7 @@ export default function HeroSection() {
             
             <motion.div 
               className="flex items-center bg-dark-purple/50 border border-light-purple/30 px-4 py-2 rounded-full"
-              whileHover={{ scale: 1.05, backgroundColor: 'rgba(99, 102, 241, 0.2)' }}
+              whileHover={isSafariBrowser ? undefined : { scale: 1.05, backgroundColor: 'rgba(99, 102, 241, 0.2)' }}
             >
               <FiCode className="mr-2 text-cyber-blue" />
               <span className="text-sm">Full Stack</span>
@@ -119,14 +134,14 @@ export default function HeroSection() {
             
             <motion.div 
               className="flex items-center bg-dark-purple/50 border border-light-purple/30 px-4 py-2 rounded-full"
-              whileHover={{ scale: 1.05, backgroundColor: 'rgba(99, 102, 241, 0.2)' }}
+              whileHover={isSafariBrowser ? undefined : { scale: 1.05, backgroundColor: 'rgba(99, 102, 241, 0.2)' }}
             >
               <FiDatabase className="mr-2 text-cyber-blue" />
               <span className="text-sm">LLMs & RAG</span>
             </motion.div>
           </motion.div>
           
-          {/* CTA Buttons */}
+          {/* CTA Buttons - retain animations for Chrome, simpler for Safari */}
           <motion.div 
             className="flex gap-4 justify-center lg:justify-start"
             initial={{ opacity: 0, y: 20 }}
@@ -136,8 +151,8 @@ export default function HeroSection() {
             <motion.a 
               href="#projects"
               className="cyber-button"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={isSafariBrowser ? undefined : { scale: 1.05 }}
+              whileTap={isSafariBrowser ? undefined : { scale: 0.95 }}
             >
               View Projects
             </motion.a>
@@ -146,8 +161,8 @@ export default function HeroSection() {
               href="#contact"
               className="px-6 py-3 bg-transparent border border-cyber-blue text-white rounded-md 
                       hover:bg-cyber-blue/20 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={isSafariBrowser ? undefined : { scale: 1.05 }}
+              whileTap={isSafariBrowser ? undefined : { scale: 0.95 }}
             >
               Get in Touch
             </motion.a>
@@ -155,7 +170,7 @@ export default function HeroSection() {
         </motion.div>
       </div>
       
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - simplify animation for Safari */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20"
         initial={{ opacity: 0, y: -20 }}
@@ -164,7 +179,7 @@ export default function HeroSection() {
       >
         <span className="text-sm text-gray-400 mb-2">Scroll Down</span>
         <motion.div
-          animate={{ y: [0, 10, 0] }}
+          animate={isSafariBrowser ? undefined : { y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
         >
           <FiArrowDown className="text-cyber-blue" />

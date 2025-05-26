@@ -1,22 +1,22 @@
 {
   "../node_modules/@react-three/drei/core/VideoTexture.js -> hls.js": {
-    "id": "../node_modules/@react-three/drei/core/VideoTexture.js -> hls.js",
+    "id": null,
     "files": []
   },
   "../node_modules/@react-three/drei/web/FaceLandmarker.js -> @mediapipe/tasks-vision": {
-    "id": "../node_modules/@react-three/drei/web/FaceLandmarker.js -> @mediapipe/tasks-vision",
+    "id": null,
     "files": []
   },
   "app/page.tsx -> @/components/ui/CustomCursor": {
-    "id": "app/page.tsx -> @/components/ui/CustomCursor",
+    "id": 2761,
     "files": [
-      "static/chunks/_app-pages-browser_src_components_ui_CustomCursor_tsx.js"
+      "static/chunks/761.4827e9f3110a95bc.js"
     ]
   },
   "components/ui/HeroSection.tsx -> react-type-animation": {
-    "id": "components/ui/HeroSection.tsx -> react-type-animation",
+    "id": 5411,
     "files": [
-      "static/chunks/_app-pages-browser_node_modules_react-type-animation_dist_esm_index_es_js.js"
+      "static/chunks/411.d50eca9e2266ff33.js"
     ]
   }
 }
