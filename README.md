@@ -2,8 +2,9 @@
 
 A modern, futuristic AI-themed portfolio website showcasing Sathvik's skills, projects, and experience as an AI/ML engineer.
 
-![Sathvik AI Portfolio Screenshot](/images/Screenshot.png)
-
+[![Sathvik AI Portfolio Screenshot](/images/Screenshot.png)
+](https://raw.githubusercontent.com/your-username/your-repo-name/main/public/images/Screenshot.png
+)
 
 ## Features
 
